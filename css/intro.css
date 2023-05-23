@@ -1,0 +1,93 @@
+.intro {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 40px 20px;
+  gap: 100px;
+}
+
+.intro-texto {
+  display: grid;
+  padding: 10px;
+  gap: 30px;
+  align-content: center;
+  text-align: left;
+}
+
+.intro h1 {
+  font-size: 4.5rem;
+  position: relative;
+}
+
+.intro h1::before {
+  background-image: url("../img/detalhe.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100px;
+  width: 130px;
+  left: -55px;
+  top: -10px;
+  z-index: -1;
+}
+
+.intro p {
+  font-size: 1.5rem;
+  color: #555;
+}
+
+/* ////////////////////// HEADER BREAKPOINTS /////////////////////// */
+
+@media (max-width: 1000px) {
+  .intro h1 {
+    font-size: 3rem;
+  }
+
+  .intro h1::before {
+    top: -25px;
+  }
+}
+
+@media (max-width: 800px) {
+  .intro {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .intro h1 {
+    font-size: 2rem;
+  }
+
+  .intro p {
+    font-size: 1.2rem;
+  }
+
+  .intro h1::before {
+    height: 10px;
+    width: 30px;
+    left: 0px;
+    top: -10px;
+  }
+}
+
+@media (max-width: 450px) {
+  .intro {
+    grid-template-columns: 1fr;
+    padding-top: 0px;
+  }
+
+  .intro-texto {
+    text-align: center;
+  }
+
+  .intro img {
+    display: none;
+  }
+
+  .intro h1::before {
+    display: none;
+  }
+}
